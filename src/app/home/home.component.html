@@ -1,0 +1,41 @@
+
+<div class="container body">
+  <div class=" jumbotron">
+
+    <div class="text text-center heading">
+      Shopping List App
+    </div>
+
+    <div class="nav-container">
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active">
+          <a routerLink="">Home</a>
+        </li>
+        <li role="presentation">
+          <a routerLink="about">About</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+<div class="container cont2" [@items]="items.length">
+  <div class="h1 text text-center">Smart Shopper</div>
+  <div class="row">
+    <div class="col-md-6" >
+      <input type="text" class="form-control" placeholder="Grocery Item" [(ngModel)]="itemText">
+      <input type="submit" class="btn" value="Add Item" (click)="addItem()" >
+    </div>
+    <div class="col-md-6" >
+      <div class="text text-center h3 item-heading">ItemCount({{itemCount}})</div>
+
+      <p class="text list-itemz" *ngFor="let item of items; let i = index" (click)="removeItem(i)">
+        {{item}}
+      </p>
+      <p>Click the item to remove!!!</p>
+    </div>
+  </div>
+</div>
+
+</div>
